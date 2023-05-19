@@ -91,7 +91,7 @@ export default function Home() {
                 : true
             )
             .map((person) => (
-              <Container key={person.name}>
+              <Container px="lg" key={person.name}>
                 <UnstyledButton
                   key={person.name}
                   onClick={() => {
@@ -103,7 +103,9 @@ export default function Home() {
                   <Avatar size="xl" src={person.picture} />
                   <Text
                     c="cyan.8"
-                    sx={{ fontFamily: "Greycliff CF, sans-serif" }}
+                    sx={{
+                      fontFamily: "Greycliff CF, sans-serif",
+                    }}
                     fw={600}
                     size="sm"
                     ta="center"
