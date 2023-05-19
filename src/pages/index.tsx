@@ -79,7 +79,7 @@ export default function Home() {
         <Flex
           gap="xl"
           mt="md"
-          justify="flex-start"
+          justify="space-between"
           align="flex-start"
           direction="row"
           wrap="wrap"
@@ -91,7 +91,7 @@ export default function Home() {
                 : true
             )
             .map((person) => (
-              <Container px="lg" key={person.name}>
+              <Stack align="center" justify="center" px="lg" key={person.name}>
                 <UnstyledButton
                   key={person.name}
                   onClick={() => {
@@ -100,20 +100,22 @@ export default function Home() {
                     open();
                   }}
                 >
-                  <Avatar size="xl" src={person.picture} />
-                  <Text
-                    c="cyan.8"
-                    sx={{
-                      fontFamily: "Greycliff CF, sans-serif",
-                    }}
-                    fw={600}
-                    size="sm"
-                    ta="center"
-                  >
-                    {person.name}
-                  </Text>
+                  <Stack align="center" justify="center">
+                    <Avatar size="xl" src={person.picture} />
+                    <Text
+                      c="cyan.8"
+                      sx={{
+                        fontFamily: "Greycliff CF, sans-serif",
+                      }}
+                      fw={600}
+                      size="sm"
+                      ta="center"
+                    >
+                      {person.name}
+                    </Text>
+                  </Stack>
                 </UnstyledButton>
-              </Container>
+              </Stack>
             ))}
         </Flex>
       </Container>
