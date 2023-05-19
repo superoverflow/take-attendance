@@ -122,6 +122,7 @@ export default function Home() {
       <Modal
         opened={opened}
         onClose={close}
+        size="sm"
         title="London 2023-05-19 Ust Alumni Meetup "
         centered
       >
@@ -146,7 +147,7 @@ export default function Home() {
       ) : submitForm.isError ? (
         <SubmitErrorAlert />
       ) : (
-        <Space h={60} />
+        <></>
       )}
     </>
   );
