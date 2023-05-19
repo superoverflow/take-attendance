@@ -86,24 +86,26 @@ export default function Home() {
         >
           {people
             .filter((p) =>
-              searchWord ? p.name.toLowerCase().includes(searchWord) : true
+              searchWord
+                ? p.name.toLowerCase().includes(searchWord.toLowerCase())
+                : true
             )
             .map((person) => (
-              <Container
-                key={person.name}
-                onClick={() => {
-                  setSelectedPerson(person.name);
-                  form.setFieldValue("name", person.name);
-                  open();
-                }}
-              >
-                <UnstyledButton key={person.name}>
+              <Container key={person.name}>
+                <UnstyledButton
+                  key={person.name}
+                  onClick={() => {
+                    setSelectedPerson(person.name);
+                    form.setFieldValue("name", person.name);
+                    open();
+                  }}
+                >
                   <Avatar size="xl" src={person.picture} />
                   <Text
                     c="cyan.8"
                     sx={{ fontFamily: "Greycliff CF, sans-serif" }}
-                    fw={700}
-                    size="md"
+                    fw={600}
+                    size="sm"
                     ta="center"
                   >
                     {person.name}
